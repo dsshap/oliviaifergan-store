@@ -1,0 +1,57 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+
+  <head>
+    <%= render :partial => 'shared/head' %>
+  </head>
+
+  <body>
+    
+    <div class="container">
+      <div class="logo-header">
+        <%= render :partial => 'shared/header' %>
+      </div>
+    </div>
+    
+    <div class="container white">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <%= render :partial => 'shared/navigation' %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container white">
+      <%= yield %>
+    </div>
+    <div class="container white">
+      <%= render :partial => 'shared/footer' %>
+    </div>
+  </body>
+
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>OliviaIfergan</title>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
+  <%#= javascript_include_tag "application" %>
+  <%#= csrf_meta_tags %>
+</head>
+<body>
+
+<%#= yield %>
+
+</body>
+</html> -->
