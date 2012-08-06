@@ -10,6 +10,7 @@
  *
  *= require nivo-slider
  *= require olivia
+ *= require nivo-theme-light
  */
 @import "bootstrap";
 
@@ -19,6 +20,10 @@ a:focus {
 
 body{
   background-color: #D1D3D4;
+}
+
+.main{
+  height:450px;
 }
 
 .container {
@@ -44,14 +49,14 @@ body{
 }
 
 .navbar .nav{
-  margin-left:150px;
+  margin-left:160px;
 }
 
 .navbar .nav > li {
   margin: 0 15px;
 }
 
-.navbar .nav > li, a {
+.navbar .nav > li > a {
   text-shadow: none;
   font-size:19px;
 }
@@ -65,7 +70,7 @@ body{
   padding-top:5px;
   margin-top:5px;
   padding-bottom:5px;
-  width:110px;
+  width:112px;
   text-align:center;
 }
 

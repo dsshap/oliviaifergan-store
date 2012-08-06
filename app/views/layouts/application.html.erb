@@ -26,14 +26,14 @@
       </div>
     </div>
     
-    <div class="container white">
+    <div class="container white main">
       <%= yield %>
     </div>
-    <div class="container white">
+    <div class="container footer-color">
       <%= render :partial => 'shared/footer' %>
     </div>
   </body>
-
+  <%= render :partial => "shared/javascripts" %>
 </html>
 
 

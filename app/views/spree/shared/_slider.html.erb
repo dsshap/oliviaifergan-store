@@ -1,16 +1,33 @@
 <% if Spree::Slide.published.count > 0 %>
   <style type="text/css"> 
-  .theme-default #slider {
-      margin:0 auto 0 auto;
+    .theme-light #slider {
+      margin-left:215px;
       width:618px; /* Make sure your images are the same size */
-      height:246px; /* Make sure your images are the same size */
-  }
-  .slider-wrapper {
-      margin:0 auto 50px auto;
-  }
+      height:386px; /* Make sure your images are the same size */
+    }
+    .nivoSlider {
+      position:relative;
+      background:url(/images/nivo/loading.gif) no-repeat 50% 50%;
+    }
+    .nivoSlider img {
+        position:absolute;
+        top:0px;
+        left:0px;
+        display:none;
+    }
+    .nivoSlider a {
+        border:0;
+        display:block;
+    }
+    .theme-light .nivo-controlNav {
+      padding: 0;
+      position: absolute;
+      text-align: left;
+      z-index: 10;
+    }
   </style>
 
-  <div class="slider-wrapper theme-default">
+  <div class="slider-wrapper theme-light">
     <div class="ribbon"></div>
     <div id="slider" class="nivoSlider">
       <% Spree::Slide.published.each do |s| %>
@@ -29,10 +46,46 @@
     <% end %>
   </div>
 
-  <script type="text/javascript">
-  $(window).load(function() {
-      $('#slider').nivoSlider();
-  });
-  </script>
+  <%= content_for(:javascript) do %>
+  
+    <script type="text/javascript">
+      $(window).load(function() {
+          $('#slider').nivoSlider({
+            effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'
+            animSpeed:500, 
+            pauseTime:3000, 
+            startSlide:0, 
+            directionNav:true, 
+            controlNav:false, 
+            controlNavThumbs:false, 
+            pauseOnHover:true, 
+            manualAdvance:false,
+            directionNavHide: false
+              
+            // slices: 15, // For slice animations
+            //             boxCols: 8, // For box animations
+            //             boxRows: 4, // For box animations
+            //             animSpeed: 500, // Slide transition speed
+            //             pauseTime: 3000, // How long each slide will show
+            //             startSlide: 0, // Set starting Slide (0 index)
+            //             directionNav: true, // Next & Prev navigation
+            //             directionNavHide: true, // Only show on hover
+            //             controlNav: true, // 1,2,3... navigation
+            //             controlNavThumbs: false, // Use thumbnails for Control Nav
+            //             pauseOnHover: true, // Stop animation while hovering
+            //             manualAdvance: false, // Force manual transitions
+            //             prevText: 'Prev', // Prev directionNav text
+            //             nextText: 'Next', // Next directionNav text
+            //             randomStart: false, // Start on a random slide
+            //             beforeChange: function(){}, // Triggers before a slide transition
+            //             afterChange: function(){}, // Triggers after a slide transition
+            //             slideshowEnd: function(){}, // Triggers after all slides have been shown
+            //             lastSlide: function(){}, // Triggers when last slide is shown
+            //             afterLoad: function(){} // Triggers when slider has loaded
+        });
+      });
+    </script>
+    
+  <% end %>
 <% end %>
 

@@ -1,1 +1,21 @@
-<p>Footer</p>
+<div class="row">
+  <div class="">
+    <%= form_tag('http://oliviaifergan.us2.list-manage.com/subscribe/post?u=557cc1acf3e5d0e0defd19db1&amp;id=16edcafa55', :target=>"_blank", :class=>"form-horizontal newsletter") do %>
+       <div class="control-group">
+        <label class="control-label" for="EMAIL">JOIN OUR NEWSLETTER</label>
+        <div class="controls">
+          <%= email_field_tag("EMAIL", nil, :class => 'input-medium', :placeholder => 'Email' ) %>
+          <%= submit_tag('SIGN-UP', :class => 'btn ') %>
+          <p class="help-block"></p>
+        </div>
+      </div>
+		<% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="">
+    <div class="info_link">
+      <%= link_to "CONTACT | SHIPPING | RETURNS | REPAIR POLICY", "#" %>
+    </div>
+  </div>
+</div>

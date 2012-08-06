@@ -26,6 +26,7 @@ gem "spree", "~> 1.1.3"
 gem 'spree_gateway', :git => 'git://github.com/spree/spree_gateway.git', :branch => "1-1-stable" # make sure to include after spree
 gem "spree_slider", "~> 1.1.0"
 
+gem "simple_form", "~> 2.0.2"
 
 gem 'quiet_assets', :group => :development
 
