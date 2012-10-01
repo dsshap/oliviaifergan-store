@@ -19,7 +19,7 @@ a:focus {
 }
 
 body{
-  background-color: #D1D3D4;
+  /*background-color: #D1D3D4;*/
 }
 
 .main{
@@ -28,7 +28,7 @@ body{
 
 .container {
 	/*border: 1px solid black;*/
-	width:1024px;
+	width:960px;
 }
 
 .container.white {
@@ -49,7 +49,7 @@ body{
 }
 
 .navbar .nav{
-  margin-left:160px;
+  margin-left:125px;
 }
 
 .navbar .nav > li {
@@ -79,5 +79,6 @@ body{
  background-color:#999999;
 
 }
+
 
 

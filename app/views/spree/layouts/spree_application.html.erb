@@ -17,9 +17,14 @@
 
       <header id="header" class="row" data-hook>
 
-        <figure id="logo" class="columns alpha six" data-hook>
-          <%= logo %>
-        </figure>
+        <div class="columns alpha six">
+          <%= link_to content_tag(:h1, "Olivia Ifergan", :class => "olivia-name"), main_app.root_path  %>
+        </div>
+       
+        
+        <!-- <figure id="logo" class="columns alpha six" data-hook>
+              <%#= logo %>
+            </figure> -->
 
         <nav id="top-nav-bar" class="columns omega ten">
           <ul id="nav-bar" class="inline" data-hook>
@@ -36,33 +41,43 @@
         <% end %>
 
       </header>
+      
+      <div class="navbar">
+        <div class="navbar-inner">
+          <%= render :partial => 'shared/navigation' %>
+          
+        </div>
+      </div>
+      <hr class="navbar-hr">
 
       <div id="wrapper" class="row" data-hook>
 
         <% if content_for?(:sidebar) %>
-          <aside id="sidebar" class="columns alpha four" data-hook>
+          <aside id="sidebar" class="columns alpha three" data-hook>
             <%= yield :sidebar %>
           </aside>
         <% end %>
 
         <div id="content" class="columns omega <% if !content_for?(:sidebar) %> sixteen alpha <% else %> twelve <% end %>" data-hook>
-          <%= breadcrumbs(@taxon) %>
+          <%#= breadcrumbs(@taxon) %>
           <%= flash_messages %>
           <%= yield %>
         </div>
 
       </div>
 
-      <footer id="footer" class="alpha omega sixteen columns" data-hook>
-        <div id="footer-left" class="columns alpha eight" data-hook>
-          <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
-        </div>
-        <div id="footer-right" class="columns omega eight" data-hook></div>
+      <footer id="footer" class="row" data-hook>
+        <!-- <div id="footer-left" class="columns alpha eight" data-hook>
+                  <p><%#= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
+                </div>
+                <div id="footer-right" class="columns omega eight" data-hook></div> -->
+        <%= render :partial => 'shared/footer' %>
       </footer>
 
     </div>
 
     <%= render :partial => 'spree/shared/google_analytics' %>
+    
 
   </body>
 
