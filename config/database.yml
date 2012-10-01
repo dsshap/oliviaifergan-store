@@ -14,11 +14,27 @@ development:
   encoding: unicode
   database: oliviaifergan_store_development_db
   pool: 5
-  username: 
+  username: olivia_ifergan
   password:
   host: localhost
-  
-  #oliviaifergan_store_test_db
+
+production:
+  adapter: postgresql
+  database: <%= ENV['PG_DB'] %>
+  encoding: utf8
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PW'] %>
+  host: <%= ENV['PG_HOST'] %>
+  port: <%= ENV['PG_PORT'] %>
+
+test:
+  adapter: postgresql
+  database: oliviaifergan_store_test_db
+  encoding: utf8
+  username: olivia_ifergan
+  password:
+  host: localhost
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
