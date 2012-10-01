@@ -21,7 +21,7 @@ development:
 production:
   adapter: postgresql
   database: <%= ENV['PG_DB'] %>
-  encoding: utf8
+  encoding: unicode
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_PW'] %>
   host: <%= ENV['PG_HOST'] %>
@@ -30,7 +30,7 @@ production:
 test:
   adapter: postgresql
   database: oliviaifergan_store_test_db
-  encoding: utf8
+  encoding: unicode
   username: olivia_ifergan
   password:
   host: localhost
