@@ -12,7 +12,7 @@ namespace :heroku do
         system "git add ."
         system "git commit -am'Precompiling assets for staging deployment'"
         puts "Pushing to heroku..."
-        system "git push staging master"
+        system "git push heroku master"
         system "rm -R public/assets"
         system "git add ."
         system "git commit -am'Removing Precompiling assets from project'"
