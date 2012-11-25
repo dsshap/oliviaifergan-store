@@ -6,52 +6,81 @@
 <!--[if IE 9 ]>    <html class="ie ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
 
-  <head>
-    <%= render :partial => 'shared/head' %>
+
+  <head data-hook="inside_head">
+    <%= render :partial => 'spree/shared/head' %>
   </head>
 
-  <body>
-    
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
     <div class="container">
-      <div class="logo-header">
-        <%= render :partial => 'shared/header' %>
-      </div>
-    </div>
-    
-    <div class="container white">
+
+      <header id="header" class="row" data-hook>
+
+        <div class="columns alpha six">
+          <%= link_to content_tag(:h1, "Olivia Ifergan", :class => "olivia-name"), main_app.root_path  %>
+        </div>
+       
+        
+        <!-- <figure id="logo" class="columns alpha six" data-hook>
+              <%#= logo %>
+            </figure> -->
+
+        <nav id="top-nav-bar" class="columns omega ten">
+          <ul id="nav-bar" class="inline" data-hook>
+            <%= render :partial => 'spree/shared/nav_bar' %>
+          </ul>
+        </nav>
+
+        <% if store_menu? %>
+          <nav class="columns alpha omega sixteen">
+            <ul id="main-nav-bar" class="inline" data-hook>
+              <%#= render :partial => 'spree/shared/store_menu' %>
+            </ul>
+          </nav>
+        <% end %>
+
+      </header>
+      
       <div class="navbar">
         <div class="navbar-inner">
           <%= render :partial => 'shared/navigation' %>
+          
         </div>
       </div>
+      <hr class="navbar-hr">
+
+      <div id="wrapper" class="row" data-hook>
+
+        <% if content_for?(:sidebar) %>
+          <aside id="sidebar" class="columns alpha three" data-hook>
+            <%= yield :sidebar %>
+          </aside>
+        <% end %>
+
+        <div id="content" class="columns omega <% if !content_for?(:sidebar) %> sixteen alpha <% else %> twelve <% end %>" data-hook>
+          <%#= breadcrumbs(@taxon) %>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+      </div>
+
+      <footer id="footer" class="row" data-hook>
+        <!-- <div id="footer-left" class="columns alpha eight" data-hook>
+                  <p><%#= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
+                </div>
+                <div id="footer-right" class="columns omega eight" data-hook></div> -->
+        <%= render :partial => 'shared/footer' %>
+      </footer>
+
     </div>
+
+    <%= render :partial => 'spree/shared/google_analytics' %>
     
-    <div class="container white main">
-      <%= yield %>
-    </div>
-    <div class="container footer-color">
-      <%= render :partial => 'shared/footer' %>
-    </div>
+
   </body>
+
   <%= render :partial => "shared/javascripts" %>
+
 </html>
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>OliviaIfergan</title>
-  <%#= stylesheet_link_tag    "application", :media => "all" %>
-  <%#= javascript_include_tag "application" %>
-  <%#= csrf_meta_tags %>
-</head>
-<body>
-
-<%#= yield %>
-
-</body>
-</html> -->

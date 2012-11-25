@@ -1,9 +1,10 @@
 OliviaIfergan::Application.routes.draw do
 
-  %w[about contact blog].each do |page|
+  %w[about contact].each do |page|
     get '/'+page => 'welcome#'+page, :as => page
   end
 
+  get '/blog' => "spree/blogs/posts#index", :blog_id => 'blog', as: :blog
 
 
   # This line mounts Spree's routes at the root of your application.

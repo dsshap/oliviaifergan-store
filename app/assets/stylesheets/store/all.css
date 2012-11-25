@@ -15,6 +15,7 @@
  *= require themes/orman/orman
  *= require nivo-slider
  
+*= require store/spree_essential_blog
 */
 
 a {
@@ -27,7 +28,8 @@ a:focus {
 }
 
 body{
-  /*background-color: #D1D3D4;*/
+  /*background-color: #D1D3D4;*= require store/spree_essential_blog
+*/
   color: #333333;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -41,7 +43,8 @@ body{
 
 .container {
 	background-color: #FFFFFF;
-  /*width:1024px!important;*/
+  /*width:1024px!important;*= require store/spree_essential_blog
+*/
 }
 
 header{
@@ -57,7 +60,8 @@ nav #main-nav-bar{
   padding-left: 10px;
   font-size: 30px;
   padding-top: 14px;
-/*  line-height: 36px;*/
+/*  line-height: 36px;*= require store/spree_essential_blog
+*/
   font-family: inherit;
   font-weight: bold;
 
@@ -80,7 +84,7 @@ nav #main-nav-bar li a {
   background-color: #FFF;
   background-image: -moz-linear-gradient(center top , #FFF, #FFF);
   border-radius: 0 0 0 0;
-  margin-left:10px;
+  margin-left:7px;
   margin-right:10px;
   
 }
@@ -94,10 +98,11 @@ nav #main-nav-bar li a {
 }
 
 .navbar .nav > li {
-  margin: 0 15px;
-  display: block;
-  float: left;
+  /*margin-left: 21px;*/
   line-height: 18px;
+
+  display: inline-block;
+  margin: 0 15px;
 }
 
 
@@ -107,17 +112,18 @@ nav #main-nav-bar li a {
   font-size:19px;
   padding-top:3px;
   margin-top:5px;
-  padding-bottom:3px;
+  padding-bottom:4px;
   width:112px!important;
   text-align:center;
-  padding-left:40px;
-  padding-right:40px;
+  padding-left:46px;
+  padding-right:46px;
   
   
 }
 
 .navbar .nav > li > a:hover {
- /*color: #999999; */
+ /*color: #999999; *= require store/spree_essential_blog
+*/
  color:#FFF!important;
  background-color:#999999;
 
@@ -141,7 +147,7 @@ nav #main-nav-bar li a {
 .navbar-hr{
   margin-left: 12px;
   margin-top: -10px;
-  width: 915px;
+  width: 930px;
 }
 
 #link-to-cart-id {
@@ -149,6 +155,7 @@ nav #main-nav-bar li a {
   background: url("") no-repeat scroll left center transparent;
   float: right;
   padding-left: 24px;
+  margin-right: -5px;
 }
 
 #link-to-cart-id a{
@@ -205,7 +212,8 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
 }
 
 .product-listing{
-  /*margin-left:109px;*/
+  /*margin-left:109px;*= require store/spree_essential_blog
+*/
 }
 
 ul#products li .product-image:hover{
@@ -217,7 +225,9 @@ ul#products li a.info:hover {
 }
 
 input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
-  background-color: #000000!important;
+  background-color: #404042!important;
+  border-color: #000!important;
+  box-shadow: none !important;
 }
 
 nav#taxonomies .taxons-list {
@@ -274,7 +284,8 @@ nav#taxonomies .taxons-list li a {
 
 /*  padding: 3px 30px 14px 3px;
   padding-left: 14px;
-  padding-right: 30px;*/
+  padding-right: 30px;*= require store/spree_essential_blog
+*/
 }
 
 nav#taxonomies .taxons-list li a:hover {
