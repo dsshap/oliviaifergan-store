@@ -1,4 +1,39 @@
-<%= title('contact | shipping | returns | repair policy') %>
-<%= stylesheet_link_tag 'application' %>
+<%= olivia_title('contact | shipping | returns | repair policy') %>
 
-<h1>Contact us</h1>
+<div class="row">
+  <div class="eight columns alpha">
+    <h2>Contact Me</h2>
+    <p>For general inquiries and questions please contact <%= mail_to "info@oliviaifergan.com", nil,
+         subject: "General Inquiry", class: 'underline' %></p>
+  </div>
+  <div class="eight columns omega">
+    <h2>Return Policy</h2>
+    <p>All items returned within 14 days of receipt are eligible for exhange or store credit. All returns require a return authorization number, please email <%= mail_to "returns@oliviaifergan.com", nil, subject: "Return Service Requested (14 Days)", class: 'underline' %> for information.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="eight columns alpha">
+    <h2>Repair Policy</h2>
+    <p>All items purchased within 2 months of receipt are eligible for free repair. Please email <%= mail_to "repairs@oliviaifergan.com", nil, subject: "Return Service Requested (2 months)", class: 'underline' %> for a repair authorization code and other information. Any item needing repair after 2 months will incur a repair charge. Please email <%= mail_to "repairs@oliviaifergan.com", nil, subject: "Return Service Requested (2+ months)", class: 'underline' %> for a repair authorization number and other information.</p>
+  </div>
+
+  <div class="eight columns omega">
+    <h2>Sales Tax</h2>
+    <p>All items purchased within the state of Illinois will incur a 9.5% sales tax</p>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="eight columns alpha">
+    <h2>Shipping</h2>
+    <p>All items will incur shipping charge based on location.</p>
+  </div>
+
+  <div class="eight columns omega">
+    <h2>Gift Wrap</h2>
+    <p>Gift wrapping is available for a $5.00 charge and packaging will include a gift receipt to recipient.</p>
+  </div>
+
+</div>

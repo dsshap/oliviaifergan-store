@@ -23,6 +23,16 @@ a {
     text-decoration: none;
 }
 
+.underline {
+  text-decoration: underline;
+  color: #686868;
+}
+
+
+h2,p {
+  color: #686868;
+}
+
 a:focus {
   outline: none;
 }
@@ -145,9 +155,7 @@ nav #main-nav-bar li a {
 }
 
 .navbar-hr{
-  margin-left: 12px;
   margin-top: -10px;
-  width: 930px;
 }
 
 #link-to-cart-id {
